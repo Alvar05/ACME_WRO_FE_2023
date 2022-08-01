@@ -21,3 +21,45 @@ To carry out this project we have created a chassis from Lego Mindstorm Robot In
 ### Camera module
 
 To achieve the goal of detecting the signs and their color we used the Pixy2 camera module connected to an Arduino Nano. The Pixy camera has its own processor which outputs the detected object information (x and y position, height and width, color…) to the arduino. Then the arduino can use the height value to do a simple rule of three, with a pre-calibrated value, and calculate the distance to the object; or it can use the x value to estimate the direction of the object. It also reads the color value and depending on the sign color makes the robot turn right (if it’s red) or left (if it’s green). The camera case was designed by ourselves and 3D printed in PLA plastic and holds the camera with some pressure between the main case and the top. The case has seven holes compatible with the Lego Technic connectors to make possible mounting the camera with the Lego parts.
+
+
+////////////////////////////////////////////////01-08-22////////////////////////////////////////////////
+
+
+##Engineering materials
+This repository contains engineering materials of a self-driven vehicle's model participating in the WRO Future Engineers competition in the season 2022.
+Content
+t-photos contains 2 photos of the team (an official one and one funny photo with all team members)
+v-photos contains 6 photos of the vehicle (from every side, from top and bottom)
+video contains the video.md file with the link to a video where driving demonstration exists
+schemes contains one or several schematic diagrams in form of JPEG, PNG or PDF of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
+src contains code of control software for all components which were programmed to participate in the competition
+models is for the files for models used by 3D printers, laser cutting machines and CNC machines to produce the vehicle elements. If there is nothing to add to this location, the directory can be removed.
+other is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
+Introduction
+/ This part must be filled by participants with the technical clarifications about the /       / code: which modules the code consists of, how they are related to the 	          /       / electromechanical components of the vehicle, and what is the process to           /        / build/compile/upload the code to the vehicle’s controllers.			          /
+### Recieving data from the robot to ease debugging
+ 
+To recieve data from the new robot, we designed an APP with MIT App Inventor to have a better management and distribution of the info. Also we can interact with it and make changes in some variables without having to upload a new sketch (to save time). This APP works with bluetooth (previusly disabled before the competition) and connects with the bluetooth module of the M5Stack. The elements we have in the APP are some variables to change like (speedness, constants for the PID functions )
+ 
+### Choosing sensors
+ 
+We thought of introducing a sensor that would allow us to read distances somewhat more accurately than an ultrasonic sensor and over a wider range than a conventional infrared sensor.
+ 
+We chose the OPT3101 sensor from Pololu, with components from Texas Instruments. This is a Time Of Flight (TOF) sensor, which measures distances of up to 1 metre by calculating the time it takes for a previously emitted infrared light beam to bounce back to the sensor.
+ 
+It has six emitters and two receivers that allow the data to be divided into three channels: left, centre and right, with a range of fifty, sixty and fifty degrees respectively.
+The operation of this type of sensor avoids many problems as it does not depend on the intensity of the light received, as would be the case with a conventional infrared sensor.
+Sensor website:
+https://www.pololu.com/product/3680
+ 
+We tried to communicate this sensor via I2C with our main processor, serving as a slave of the Arduino, along with other sensors such as the MPU6050 gyroscope.
+Because of this, we had to ensure that the libraries of each sensor were compatible with each other, as well as programming the reception of data with interrupts to prevent data from different sensors from interfering with each other.
+ 
+Translated with www.DeepL.com/Translator (free version)
+
+
+
+
+
+
