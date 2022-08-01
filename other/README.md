@@ -1,1 +1,1 @@
-Otros archivos que puedan ser utiles para entender como preparar el coche para la competicion. Este directorio no es obligatorio. 
+Is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
