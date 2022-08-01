@@ -1,1 +1,5 @@
-Tiene el archivo video.md con el link a un video del coche moviendose de forma autonoma. La parte del video con la demostracion de conduccion autonoma tiene que ser minimo de 30 segundos
+Video
+====
+
+This directory must contain the video.md file with a URL to YouTube (should be either public or accessible by link) showing the vehicle driving autonomously.
+That part of the video where driving demonstration exists must be at least 30 seconds in length.
