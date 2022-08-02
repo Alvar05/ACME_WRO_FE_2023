@@ -22,7 +22,11 @@ _This part must be filled by participants with the technical clarifications abou
 
 ### Recieving data from the robot to ease debugging
  
-To recieve data from the new robot, we designed an APP with MIT App Inventor to have a better management and distribution of the info. Also we can interact with it and make changes in some variables without having to upload a new sketch (to save time). This APP works with bluetooth (previusly disabled before the competition) and connects with the bluetooth module of the M5Stack. The elements we have in the APP are some variables to change like (speedness, constants for the PID functions )
+To recieve data from the new robot, we designed an APP with MIT App Inventor (https://appinventor.mit.edu/) to have a better management and distribution of the info. Also we can interact with it and make changes in some variables without having to upload a new sketch (to save time). This APP works with bluetooth (previusly disabled before the competition) and connects with the bluetooth module of the M5Stack. 
+ 
+The elements we have in the APP are some variables to change like speedness or constants for the PID functions, a console to send data to the robot, a Play/Stop button and a grafic section which shows a 2D version of the field with a car that estimates and emulates the moves of the real robot in the screen and draw lines that show the path the robot made. 
+ 
+The method used to emulate the robot moves is odometry based on the two encoders that are placed at both of the rear tires (which can rotate freely and don’t steer).
  
 ### Choosing sensors
  
