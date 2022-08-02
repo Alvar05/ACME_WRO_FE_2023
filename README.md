@@ -26,7 +26,9 @@ To recieve data from the new robot, we designed an APP with MIT App Inventor (ht
  
 The elements we have in the APP are some variables to change like speedness or constants for the PID functions, a console to send data to the robot, a Play/Stop button and a grafic section which shows a 2D version of the field with a car that estimates and emulates the moves of the real robot in the screen and draw lines that show the path the robot made. 
  
-The method used to emulate the robot moves is odometry based on the two encoders that are placed at both of the rear tires (which can rotate freely and don’t steer).
+The method used to emulate the robot moves is odometry based on the two encoders that are placed at both of the rear tires, which can rotate freely and don’t steer (this allows us to use a diferential-based odometry method).
+ 
+By the code part, we use the BluetoothSerial.h library to control the bluetooth data of the M5Stack. To update the data from the robot, the APP sends a petition to the robot which, when recieved, returns a string between a first “<” character and a final “>” character to make it easier for the APP to detect the correct data and avoid other noise. The data recieved outside of the “<string>”, is acumulated and when a \n is recieved, all the acumulated data is printed in the screen console (this allows us to send some flag words to the APP console using the println() method and have more control on whats happening in the running program).
  
 ### Choosing sensors
  
