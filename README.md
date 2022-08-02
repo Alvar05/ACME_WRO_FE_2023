@@ -55,11 +55,3 @@ https://www.pololu.com/product/3680
  
 We tried to communicate this sensor via I2C with our main processor, serving as a slave of the Arduino, along with other sensors such as the MPU6050 gyroscope.
 Because of this, we had to ensure that the libraries of each sensor were compatible with each other, as well as programming the reception of data with interrupts to prevent data from different sensors from interfering with each other.
- 
-Translated with www.DeepL.com/Translator (free version)
-
-
-
-
-
-
