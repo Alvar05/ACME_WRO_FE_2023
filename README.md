@@ -28,7 +28,7 @@ The elements we have in the APP are some variables to change like speedness or c
  
 The method used to emulate the robot moves is odometry based on the two encoders that are placed at both of the rear tires, which can rotate freely and don’t steer (this allows us to use a diferential-based odometry method).
  
-By the code part, we use the BluetoothSerial.h library to control the bluetooth data of the M5Stack. To update the data from the robot, the APP sends a petition to the robot which, when recieved, returns a string between a first “<” character and a final “>” character to make it easier for the APP to detect the correct data and avoid other noise. The data recieved outside of the “<data>”, is acumulated and when a \n is recieved, all the acumulated data is printed in the screen console (this allows us to send some flag words to the APP console using the println() method and have more control on whats happening in the running program).
+By the code part, we use the BluetoothSerial.h library to control the bluetooth data of the M5Stack. To update the data from the robot, the APP sends a petition to the robot which, when recieved, returns a string between a first “<” character and a final “>” character to make it easier for the APP to detect the correct data and avoid other noise. The data recieved outside of the “<" ">”, is acumulated and when a \n is recieved, all the acumulated data is printed in the screen console (this allows us to send some flag words to the APP console using the println() method and have more control on whats happening in the running program).
  
 ### Choosing sensors
  
