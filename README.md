@@ -17,18 +17,51 @@ This repository contains engineering materials of a self-driven vehicle's model 
 * `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed.
 
 ## Introduction
+ 
+/ This part must be filled by participants with the technical clarifications about the /       / code: which modules the code consists of, how they are related to the 	          /       / electromechanical components of the vehicle, and what is the process to           /        / build/compile/upload the code to the vehicle’s controllers.			          /
+ 
+ 
+Since our participation last year, we have been improving our vehicle to make it look smaller and more compact, but, to understand it, we should take a look at the basics and the functioning of the old robot.
+We created two arduino controlled boards and communicated them by I2c, this way we could use a larger number of sensors at a time.
+Next on, a deeper explanation of its functioning.
+ 
+### Sensor board
 
-_This part must be filled by participants with the technical clarifications about the code: which modules the code consists of, how they are related to the electromechanical components of the vehicle, and what is the process to build/compile/upload the code to the vehicle’s controllers._
+This board has been equipped with connectors for three HC-Sr04 ultrasonic sensors, for a MPU 6050 gyroscope sensor and for two encoders; all that controlled by an arduino pro micro that receives the data and sends it via I2c to the main controller in the motor board. It has some extra connectors to link possible future sensors. Its dimensions are 54mm x 71mm  It’s fitted into a PLA-made case in which most of the sensors are kept. The box has from one to three holes in each side (we have different designs) designed to fit in the HC-Sr04 and a motor, as well as an extra hole to make the arduino cable able to reach the pro micro connector. It has been designed to be compatible with Lego, so it could be used as a functional piece. Its dimensions are 87.80mm x 32.80mm x 71.80mm.
 
-### Recieving data from the robot to ease debugging
+### Motor board and main controller
+
+This other board is also fitted into a PLA-made Lego-compatible case, of the same dimensions as the sensors one. The motor board has control over the wheels, the speed at which the vehicle moves and the direction it takes, also it has the purpose of dealing with the data that receives by I2c from the other board.
+
+### Photoreceptor encoders
+
+To measure the distance the robot is driving, we use two TCST 2103 photoreceptors with light diode. Those components are welded to a little board which only needs Vcc (5V) and GND and has a pin that receives the pulses from the photoreceptor. We made a cage for this board to be able to attach a gear which, when rotating, will be detected by the sensor and make the board react, by emitting pulses every few grades of rotation so then, with a mathematical algorithm, the robot can calculate the distance it's moving. This cage is also compatible with Lego Mindstorms to be able to attach it to the rest of the body of the robot.
+
+### Ultrasonic sensors
+
+We made a cage compatible with Lego Mindstorms for the HC-04 ultrasonic sensors to also attach them easily to the main body of the robot. We use the ultrasonic sensors to read how far the borders are (with the lateral sensors) and to know how far things ahead are (with the frontal sensor).
+
+### Chassis design
+
+To carry out this project we have created a chassis from Lego Mindstorm Robot Inventor pieces and 3D prints designed by ourselves. The first challenge was to design a steering system, since we needed a system as precise as possible, within the capabilities of Lego. To resolve that we made an Ackerman steering system, which allowed us to make tight turns without the wheels slipping. Linked to this we have some 3D prints, designed to be able to join with Lego pieces. These serve to support and unite all the sensors and plates of the robot, in addition to work as the base of the chassis. Finally, at the front, we have two fixed wheels with an encoder sensor on each, aided by 3D printing to read the wheel turns.
+
+### Camera module
+
+To achieve the goal of detecting the signs and their colour we used the Pixy2 camera module connected to an Arduino Nano. The Pixy camera has its own processor which outputs the detected object information (x and y position, height and width, colour…) to the arduino. Then the arduino can use the height value to do a simple rule of three, with a pre-calibrated value, and calculate the distance to the object; or it can use the x value to estimate the direction of the object. It also reads the colour value and depending on the sign colour makes the robot turn right (if it’s red) or left (if it’s green). The camera case was designed by ourselves and 3D printed in PLA plastic and holds the camera with some pressure between the main case and the top. The case has seven holes compatible with the Lego Technic connectors to make mounting the camera with the Lego parts possible.
+
+
+##Updates (from the old model to the new one)
+
+
+### Receiving data from the robot to ease debugging
  
-To recieve data from the new robot, we designed an APP with MIT App Inventor (https://appinventor.mit.edu/) to have a better management and distribution of the info. Also we can interact with it and make changes in some variables without having to upload a new sketch (to save time). This APP works with bluetooth (previusly disabled before the competition) and connects with the bluetooth module of the M5Stack. 
+To receive data from the new robot, we designed an APP with MIT App Inventor (https://appinventor.mit.edu/) to have better management and distribution of the info. We also can interact with it and make changes in some variables without having to upload a new sketch (to save time). This APP works with bluetooth (previously disabled before the competition) and connects with the bluetooth module of the M5Stack. 
  
-The elements we have in the APP are some variables to change like speedness or constants for the PID functions, a console to send data to the robot, a Play/Stop button and a grafic section which shows a 2D version of the field with a car that estimates and emulates the moves of the real robot in the screen and draw lines that show the path the robot made. 
+The elements we have in the APP are some variables to change like speedness or constants for the PID functions, a console to send data to the robot, a Play/Stop button and a graphic section which shows a 2D version of the field with a car that estimates and emulates the moves of the real robot in the screen and draw lines that show the path the robot made. 
  
-The method used to emulate the robot moves is odometry based on the two encoders that are placed at both of the rear tires, which can rotate freely and don’t steer (this allows us to use a diferential-based odometry method).
+The method used to emulate the robot moves is odometry based on the two encoders that are placed at both of the rear tires, which can rotate freely and don’t steer (this allows us to use a differential-based odometry method).
  
-By the code part, we use the BluetoothSerial.h library to control the bluetooth data of the M5Stack. To update the data from the robot, the APP sends a petition to the robot which, when recieved, returns a string between a first “<” character and a final “>” character to make it easier for the APP to detect the correct data and avoid other noise. The data recieved outside of the “<" ">”, is acumulated and when a \n is recieved, all the acumulated data is printed in the screen console (this allows us to send some flag words to the APP console using the println() method and have more control on whats happening in the running program).
+By the code part, we use the BluetoothSerial.h library to control the bluetooth data of the M5Stack. To update the data from the robot, the APP sends a petition to the robot which, when recieved, returns a string between a first “<” character and a final “>” character to make it easier for the APP to detect the correct data and avoid other noise. The data received outside of the “<string>”, is accumulated and when a \n is received, all the accumulated data is printed in the screen console (this allows us to send some flag words to the APP console using the println() method and have more control on what is happening in the running program).
  
 ### Choosing sensors
  
