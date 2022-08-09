@@ -18,10 +18,7 @@ This repository contains engineering materials of a self-driven vehicle's model 
 
 ## Introduction
  
-/ This part must be filled by participants with the technical clarifications about the /
-/ code: which modules the code consists of, how they are related to the 	              /
-/ electromechanical components of the vehicle, and what is the process to              /
-/ build/compile/upload the code to the vehicle’s controllers.			                       /
+/ This part must be filled by participants with the technical clarifications about the /       / code: which modules the code consists of, how they are related to the 	          /       / electromechanical components of the vehicle, and what is the process to           /        / build/compile/upload the code to the vehicle’s controllers.			          /
  
  
 Since our participation last year, we have been improving our vehicle to make it look smaller and more compact, but, to understand it, we should take a look at the basics and the functioning of the old robot.
@@ -55,6 +52,12 @@ To achieve the goal of detecting the signs and their colour we used the Pixy2 ca
 
 ## Updates (from the old model to the new one)
 
+This year we are improving the robot, our main goals are to make it smaller and faster, so we are building it all over again, over a different base. This time, instead of making our own PLA structure, we used a RC mini-Z toy and started building the new vehicle over its base structure.
+
+### Problems with the processor
+
+At first, we tried to implement the same board distribution on the new robot; two boards, with one arduino nano each; but, soon we realised that, due to the change of structure and the new sensors used (ex; OPT 3101), the two board distribution became inappropriate.
+The arduino memory wasn’t large enough and fitting two boards into such a small structure was almost impossible. Our solution was to implement the M5Stack processor.
 
 ### Receiving data from the robot to ease debugging
  
@@ -79,3 +82,9 @@ https://www.pololu.com/product/3680
  
 We tried to communicate this sensor via I2C with our main processor, serving as a slave of the Arduino, along with other sensors such as the MPU6050 gyroscope.
 Because of this, we had to ensure that the libraries of each sensor were compatible with each other, as well as programming the reception of data with interrupts to prevent data from different sensors from interfering with each other.
+
+
+### Measuring distances
+Just like we did in the old vehicle, the distance it moves must be somehow recorded, and for this task we are using hall effect sensors as encoders. To implement those sensors, the box in between the rear wheels containing the differential has been replaced by a modified copy that makes space for three sensors.
+Each wheel is connected to a cylindrical magnet which, when moving, is detected by the sensor, giving a signal every few degrees. This way we can get an idea of the distance travelled by the robot. 
+The third sensor is supposed to read the rotation degrees of the motor, so we can estimate the actual traction of the wheels. By now we are not using this sensor.
