@@ -56,6 +56,10 @@ This year we are improving the robot, our main goals are to make it smaller and 
 At first, we tried to implement the same board distribution on the new robot; two boards, with one arduino nano each; but, soon we realised that, due to the change of structure and the new sensors used (ex; OPT 3101), the two board distribution became inappropriate.
 The arduino memory wasn’t large enough and fitting two boards into such a small structure was almost impossible. Our solution was to implement the M5Stack processor.
 
+### New tires
+
+We tried to create our own rubber tires for the new vehicle using PLA-made molds. The first few tires turned out to be not good enough so we bought and started using Pololu tires. We will be making more tires hoping that we can substitute the Pololu ones the moment we get ours to be good enough.
+
 ### Receiving data from the robot to ease debugging
  
 To receive data from the new robot, we designed an APP with MIT App Inventor (https://appinventor.mit.edu/) to have better management and distribution of the info. We also can interact with it and make changes in some variables without having to upload a new sketch (to save time). This APP works with bluetooth (previously disabled before the competition) and connects with the bluetooth module of the M5Stack. 
