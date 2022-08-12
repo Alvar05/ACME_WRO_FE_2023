@@ -72,7 +72,7 @@ By the code part, we use the BluetoothSerial.h library to control the bluetooth 
  
 ### Choosing sensors
  
-We thought of introducing a sensor that would allow us to read distances somewhat more accurately than an ultrasonic sensor and over a wider range than a conventional infrared sensor.
+We thought of introducing a sensor that would allow us to read distances somehow more accurately than an ultrasonic sensor and over a wider range than a conventional infrared sensor.
  
 We chose the OPT3101 sensor from Pololu, with components from Texas Instruments. This is a Time Of Flight (TOF) sensor, which measures distances of up to 1 metre by calculating the time it takes for a previously emitted infrared light beam to bounce back to the sensor.
  
@@ -89,3 +89,11 @@ Because of this, we had to ensure that the libraries of each sensor were compati
 Just like we did in the old vehicle, the distance it moves must be somehow recorded, and for this task we are using hall effect sensors as encoders. To implement those sensors, the box in between the rear wheels containing the differential has been replaced by a modified copy that makes space for three sensors.
 Each wheel is connected to a cylindrical magnet which, when moving, is detected by the sensor, giving a signal every few degrees. This way we can get an idea of the distance travelled by the robot. 
 The third sensor is supposed to read the rotation degrees of the motor, so we can estimate the actual traction of the wheels. By now we are not using this sensor.
+
+
+### Problems whith the OPT3031
+The Tof sensor that we tried to use ended up generating more problems that the ones it solved.
+The use of this sensor at the same time of the MPU6050 gyroscope caused trouble, it stopped working at some point whithout any apearent reason and the data recieved was quite irregular.
+We thought on implementing a different Tof sensor, being the VL53LX our main option but, by now, we will be using the HC-sr04 ultrasonic sensor, that seems to allways work precisely enough. 
+Despite of that, the ultrasonic has generated some problems until now, but those seem to be easier to deal whith. That is why we won't change it yet.
+The main ploblem seems to be caused by the vibration of the wheels when spining. This vibration spreds though the robot and to the sensor, making it send false data.
