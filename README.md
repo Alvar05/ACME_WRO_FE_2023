@@ -97,3 +97,8 @@ The use of this sensor at the same time of the MPU6050 gyroscope caused trouble,
 We thought on implementing a different Tof sensor, being the VL53LX our main option but, by now, we will be using the HC-sr04 ultrasonic sensor, that seems to allways work precisely enough. 
 Despite of that, the ultrasonic has generated some problems until now, but those seem to be easier to deal whith. That is why we won't change it yet.
 The main ploblem seems to be caused by the vibration of the wheels when spining. This vibration spreds though the robot and to the sensor, making it send false data.
+
+
+### The HC-sr04 sensors' issues
+As result of using again the ultrasonic sensors some old problems showed up again. Due to the fact that the HC-sr04 has a much narrower range than the OPT3031 we have seen ourselves pushed into using three HC to cover the two sides of the robot aswell as the front. The problem abot that is that we don't have enough pins in the M5Stack to connect that much sensors.
+We are using again two boards, one controlled by the M5 and the other by an Arduino, this way we can get the pins we need.
