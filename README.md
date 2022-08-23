@@ -102,3 +102,7 @@ The main ploblem seems to be caused by the vibration of the wheels when spining.
 ### The HC-sr04 sensors' issues
 As result of using again the ultrasonic sensors some old problems showed up again. Due to the fact that the HC-sr04 has a much narrower range than the OPT3031 we have seen ourselves pushed into using three HC to cover the two sides of the robot aswell as the front. The problem abot that is that we don't have enough pins in the M5Stack to connect that much sensors.
 We are using again two boards, one controlled by the M5 and the other by an Arduino, this way we can get the pins we need.
+
+
+### Reflected light sensors
+Our original plan involed detecting the colour lines on the game field, so we can get information to locate the robot during the run. To achieve that, we are choosing now what sensor to use. Our options are the cny70, the tcrt5000 and the tcs34725. By now we have tested the two frirst mentioned sensors and the only thing that seems clear is that reading an orange line over a white background is a chalenge itself.
