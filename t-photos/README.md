@@ -1,4 +1,4 @@
 Team's photos
 ====
 
-This directory contains 2 photos of the team (an official one and one funny photo with all team members)
+This directory contains 2 photos of the team (an official one and one funny photo with all team members). Also a making of video of the funny photo
