@@ -2,7 +2,7 @@ These are the required libraries (third-party) to compile the code to the contro
 
 * `ESP32Servo:` Library for controlling Servos with the ESP32 controller
 * `HUSKYLENS:` Library to control the HuskyLens WebCam
-* `ESP32Servo:`
+* `MPU6050_tockn:` Library to control the Gyroscope-accelerometer MPU6050
 * `ESP32Servo:`
 * `ESP32Servo:`
 * `ESP32Servo:`
