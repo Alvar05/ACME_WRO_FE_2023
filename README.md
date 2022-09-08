@@ -48,6 +48,8 @@ To achieve the goal of detecting the signs and their colour we used the Pixy2 ca
 ## Updates (from the old model to the new one)
 / This part must be filled by participants with the technical clarifications about the /       / code: which modules the code consists of, how they are related to the 	          /       / electromechanical components of the vehicle, and what is the process to           /        / build/compile/upload the code to the vehicle’s controllers.			          /
 
+The code consists in 2 different programs for both M5Stack and ProMicro controller. One 
+
 This year we are improving the robot, our main goals are to make it smaller and faster, so we are building it all over again, over a different base. This time, instead of making our own PLA structure, we used a RC mini-Z toy and started building the new vehicle over its base structure.
 
 ### Problems with the processor
