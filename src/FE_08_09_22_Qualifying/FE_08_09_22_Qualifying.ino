@@ -14,8 +14,6 @@ MPU6050 mpu(Wire);  //Initiates some objects
 Servo direccion;
 VL53L1X tof;
 
-// orientation/motion vars
-
 int vueltas = 0; // Lap counter
 int distanciaTof = 0;
 
