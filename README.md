@@ -16,9 +16,6 @@ This repository contains engineering materials of a self-driven vehicle's model 
  
 ## Introduction
  
-/ This part must be filled by participants with the technical clarifications about the /       / code: which modules the code consists of, how they are related to the 	          /       / electromechanical components of the vehicle, and what is the process to           /        / build/compile/upload the code to the vehicle’s controllers.			          /
- 
- 
 Since our participation last year, we have been improving our vehicle to make it look smaller and more compact, but, to understand it, we should take a look at the basics and the functioning of the old robot.
 We created two arduino controlled boards and communicated them by I2c, this way we could use a larger number of sensors at a time.
 Next on, a deeper explanation of its functioning.
@@ -49,6 +46,7 @@ To achieve the goal of detecting the signs and their colour we used the Pixy2 ca
 
 
 ## Updates (from the old model to the new one)
+/ This part must be filled by participants with the technical clarifications about the /       / code: which modules the code consists of, how they are related to the 	          /       / electromechanical components of the vehicle, and what is the process to           /        / build/compile/upload the code to the vehicle’s controllers.			          /
 
 This year we are improving the robot, our main goals are to make it smaller and faster, so we are building it all over again, over a different base. This time, instead of making our own PLA structure, we used a RC mini-Z toy and started building the new vehicle over its base structure.
 
