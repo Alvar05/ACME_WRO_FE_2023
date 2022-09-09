@@ -5,12 +5,12 @@ This repository contains engineering materials of a self-driven vehicle's model 
 
 ## Content
 
-* `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members).
+* `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members). Also a panoramic version of the Funny photo and a link to its making-of video.
 * `v-photos` contains 8 photos of the vehicle (6 from every side, top and bottom, 1 with last year's vehicle and 1 without the M5Stack and all the components visible).
 * `video` contains the video.md file with the link to a video with a driving demonstration.
 * `schemes` contains one schematic diagram of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
 * `src` contains code of control software for all components which were programmed to participate in the competition.
-* `models` contains all the 3D-printed parts of the vehicle. **
+* `models` contains all the 3D-printed parts of the vehicle. 
 * `other` contains the PCBs of the vehicle and the datasheets of all the components.
 * `YouTube Channel` All public videos are uploaded at https://www.youtube.com/channel/UCMpIuC9MiNL4U_FDTKrd1CQ
  
@@ -66,8 +66,7 @@ Because of this, we had to ensure that the libraries of each sensor were compati
 
 ### Measuring distances
 Just like we did in the old vehicle, the distance it moves must be somehow recorded, and for this task we are using hall effect sensors as encoders. To implement those sensors, the box in between the rear wheels containing the differential has been replaced by a modified copy that makes space for three sensors.
-Each wheel is connected to a cylindrical magnet which, when moving, is detected by the sensor, giving a signal every few degrees. This way we can get an idea of the distance travelled by the robot. 
-The third sensor is supposed to read the rotation degrees of the motor, so we can estimate the actual traction of the wheels. By now we are not using this sensor.
+Each wheel is connected to a cylindrical magnet which, when moving, is detected by the sensor, giving a signal every few degrees. This way we can get an idea of the distance travelled by the robot. The third sensor is supposed to read the rotation degrees of the motor, so we can estimate the actual speed of the motor.
 
 
 ### Problems whith the OPT3031
@@ -77,19 +76,19 @@ We thought on implementing a different Tof sensor, being the VL53LX our main opt
 Despite of that, the ultrasonic has generated some problems until now, but those seem to be easier to deal whith. That is why we won't change it yet.
 The main ploblem seems to be caused by the vibration of the wheels when spining. This vibration spreds though the robot and to the sensor, making it send false data.
 
+### Implementing VL53L1X
+
+Finally, we tried the VL53L1X that seemed to work really good in short distances (not working really good with non-reflective black walls at high distances). The solution was to implement HC-sr04 and VL53L1X at the same time, using ultrasonics in long distances (with a slower refresh) and the TOF ones in shorter ranges.
 
 ### The HC-sr04 sensors' issues
 As result of using again the ultrasonic sensors some old problems showed up again. Due to the fact that the HC-sr04 has a much narrower range than the OPT3031 we have seen ourselves pushed into using three HC to cover the two sides of the robot aswell as the front. The problem abot that is that we don't have enough pins in the M5Stack to connect that much sensors.
 We are using again two boards, one controlled by the M5 and the other by an Arduino, this way we can get the pins we need.
 
-
-### Reflected light sensors
-Our original plan involed detecting the colour lines on the game field, so we can get information to locate the robot during the run. To achieve that, we are choosing now what sensor to use. Our options are the cny70, the tcrt5000 and the tcs34725. By now we have tested the two frirst mentioned sensors and the only thing that seems clear is that reading an orange line over a white background is a chalenge itself.
-
-
 ### Camera module
 To achieve the goal of detecting the signs and their colour we used the HuskyLens camera module connected to the M5Stack using I2C. The HuskyLens camera has its own processor which outputs the detected object information (x and y position, height and width, colour…) to the M5Stack. Then the M5Stack can use the height value to do a simple rule of three, with a pre-calibrated value, and calculate the distance to the object; or it can use the x value to estimate the direction of the object. It also reads the colour value and depending on the sign colour makes the robot turn right (if it’s red) or left (if it’s green). The camera is mounted with a 3D-printed support to a servo so it can rotate and the servo is fixed to the PCB.
 
+### How it does during the matches
 
- 
+We wanted a fast robot, but now is too fast in some zones of the mat and we're working on reducing its minimum velocity to have a better control in some especific tasks. Our idea is to make a first lap with low velocity to read all the aleatory components of the round and, in the next laps, make acceleration and deceleration sections knowing our path to be faster.
+
 Happy cloning!
