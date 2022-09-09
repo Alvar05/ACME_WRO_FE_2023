@@ -16,18 +16,13 @@ This repository contains engineering materials of a self-driven vehicle's model 
  
 ## Introduction
  
-Since our participation last year, we made a new vehicle smaller and more compact, but, to understand it, we should take a look at the basics and the functioning of the old robot. We created two arduino controlled boards and communicated them by I2c, this way we could use a larger number of sensors at a time.
-Next on, a deeper explanation of its functioning.
- 
- 
-### Camera module
+Since our participation last year, we have made a new vehicle (smaller and faster) using what we learnt from the old vehicle, which had two arduino controlled boards communicated by I2C, so we could use a larger number of sensors. And 
 
-To achieve the goal of detecting the signs and their colour we used the Pixy2 camera module connected to an Arduino Nano. The Pixy camera has its own processor which outputs the detected object information (x and y position, height and width, colour…) to the arduino. Then the arduino can use the height value to do a simple rule of three, with a pre-calibrated value, and calculate the distance to the object; or it can use the x value to estimate the direction of the object. It also reads the colour value and depending on the sign colour makes the robot turn right (if it’s red) or left (if it’s green). The camera case was designed by ourselves and 3D printed in PLA plastic and holds the camera with some pressure between the main case and the top. The case has seven holes compatible with the Lego Technic connectors to make mounting the camera with the Lego parts possible.
 
 
 ## This year vehicle
 
-This year we are improving the robot, our main goals are to make it smaller and faster, so we are building it all over again, over a different base. This time, instead of making our own PLA structure, we used a RC mini-Z toy and started building the new vehicle over its base structure.
+This year we are improving the robot, our main goals are to make it smaller and faster, so we are building it all over again, over a different base. This time, instead of making our own PLA structure, we used a RC mini-Z toy car and started building the new vehicle over its base structure.
 
 The code consists in 2 different programs for both M5Stack and ProMicro controller. The M5Stack is the main controller (Master) and connects by I2C with the ProMicro, which controls everything related to HC-04 sensors and sends it to the master. Every module of each program contains a simple description of what it does at the beggining of it, but, basically, they contain functions to use in the main program related to the electromechanical part specified or I2C communication.
 
@@ -90,3 +85,9 @@ We are using again two boards, one controlled by the M5 and the other by an Ardu
 
 ### Reflected light sensors
 Our original plan involed detecting the colour lines on the game field, so we can get information to locate the robot during the run. To achieve that, we are choosing now what sensor to use. Our options are the cny70, the tcrt5000 and the tcs34725. By now we have tested the two frirst mentioned sensors and the only thing that seems clear is that reading an orange line over a white background is a chalenge itself.
+
+
+### Camera module
+To achieve the goal of detecting the signs and their colour we used the HuskyLens camera module connected to the M5Stack using I2C. The HuskyLens camera has its own processor which outputs the detected object information (x and y position, height and width, colour…) to the M5Stack. Then the M5Stack can use the height value to do a simple rule of three, with a pre-calibrated value, and calculate the distance to the object; or it can use the x value to estimate the direction of the object. It also reads the colour value and depending on the sign colour makes the robot turn right (if it’s red) or left (if it’s green). The camera is mounted with a 3D-printed support to a servo so it can rotate and the servo is fixed to the PCB.
+
+Happy cloning!
