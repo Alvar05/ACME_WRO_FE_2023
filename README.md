@@ -24,7 +24,7 @@ Since our participation last year, we have made a new vehicle (smaller and faste
 
 This year we are improving the robot, our main goals are to make it smaller and faster, so we are building it all over again, over a different base. This time, instead of making our own PLA structure, we used an RC mini-Z toy car and started building the new vehicle over its base structure.
 
-The code consists of 2 different programs for both M5Stack and ProMicro controller. The M5Stack is the main controller (Master) and connects by I2C with the ProMicro, which controls everything related to HC-04 sensors and sends it to the master. Every module of each program contains a simple description of what it does at the beggining of it, but, basically, they contain functions to use in the main program related to the electromechanical part specified or I2C communication.
+The code consists of 2 different programs for both M5Stack and ProMicro controller. The M5Stack is the main controller (Master) and connects by I2C with the ProMicro, which controls everything related to HC-04 sensors and sends it to the master. Every module of each program contains a simple description of what it does at the beginning of it, but, basically, they contain functions to use in the main program related to the electromechanical part specified or I2C communication.
 
 To compile and upload the programs to the controllers, we use Arduino IDE. To upload the code to the ESP32 controller of the M5Stack, you can follow the steps in https://docs.m5stack.com/en/quick_start/m5core/Arduino.
 
