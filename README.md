@@ -46,11 +46,14 @@ To achieve the goal of detecting the signs and their colour we used the Pixy2 ca
 
 
 ## Updates (from the last year model to the new one)
-/ This part must be filled by participants with the technical clarifications about the /       / code: which modules the code consists of, how they are related to the 	          /       / electromechanical components of the vehicle, and what is the process to           /        / build/compile/upload the code to the vehicle’s controllers.			          /
-
-The code consists in 2 different programs for both M5Stack and ProMicro controller. The M5Stack is the main controller (Master) and connects by I2C with the ProMicro, which controls everithing related to HC-04 sensors and sends it to the master. Every module of each program contains a simple description of what it does at the beggining of it, but, basically, they contain functions to use in the main program related to the electromechanical part specified or I2C communication.
 
 This year we are improving the robot, our main goals are to make it smaller and faster, so we are building it all over again, over a different base. This time, instead of making our own PLA structure, we used a RC mini-Z toy and started building the new vehicle over its base structure.
+
+The code consists in 2 different programs for both M5Stack and ProMicro controller. The M5Stack is the main controller (Master) and connects by I2C with the ProMicro, which controls everything related to HC-04 sensors and sends it to the master. Every module of each program contains a simple description of what it does at the beggining of it, but, basically, they contain functions to use in the main program related to the electromechanical part specified or I2C communication.
+
+To compile and upload the programs to the controllers we use Arduino IDE. To upload the code to the ESP32 controller of the M5Stack you can find the steps in https://docs.m5stack.com/en/quick_start/m5core/arduino.
+
+
 
 ### Problems with the processor
 
