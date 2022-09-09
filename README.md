@@ -5,13 +5,13 @@ This repository contains engineering materials of a self-driven vehicle's model 
 
 ## Content
 
-* `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members)
-* `v-photos` contains 6 photos of the vehicle (from every side, from top and bottom)
-* `video` contains the video.md file with the link to a video where driving demonstration exists
+* `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members).
+* `v-photos` contains 8 photos of the vehicle (6 from every side, top and bottom, 1 with last year's vehicle and 1 without the M5Stack and all the components visible).
+* `video` contains the video.md file with the link to a video with a driving demonstration.
 * `schemes` contains one schematic diagram of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
-* `src` contains code of control software for all components which were programmed to participate in the competition
-* `models` is for the files for models used by 3D printers, laser cutting machines and CNC machines to produce the vehicle elements. If there is nothing to add to this location, the directory can be removed. **
-* `other` is for other files which can be used to understand how to prepare the vehicle for the competition. It may include documentation how to connect to a SBC/SBM and upload files there, datasets, hardware specifications, communication protocols descriptions etc. If there is nothing to add to this location, the directory can be removed. *
+* `src` contains code of control software for all components which were programmed to participate in the competition.
+* `models` contains all the 3D-printed parts of the vehicle. **
+* `other` contains the PCBs of the vehicle and the datasheets of all the components.
 * `YouTube Channel` All public videos are uploaded at https://www.youtube.com/channel/UCMpIuC9MiNL4U_FDTKrd1CQ
  
 ## Introduction
