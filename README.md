@@ -45,7 +45,7 @@ To carry out this project we have created a chassis from Lego Mindstorm Robot In
 To achieve the goal of detecting the signs and their colour we used the Pixy2 camera module connected to an Arduino Nano. The Pixy camera has its own processor which outputs the detected object information (x and y position, height and width, colour…) to the arduino. Then the arduino can use the height value to do a simple rule of three, with a pre-calibrated value, and calculate the distance to the object; or it can use the x value to estimate the direction of the object. It also reads the colour value and depending on the sign colour makes the robot turn right (if it’s red) or left (if it’s green). The camera case was designed by ourselves and 3D printed in PLA plastic and holds the camera with some pressure between the main case and the top. The case has seven holes compatible with the Lego Technic connectors to make mounting the camera with the Lego parts possible.
 
 
-## Updates (from the old model to the new one)
+## Updates (from the last year model to the new one)
 / This part must be filled by participants with the technical clarifications about the /       / code: which modules the code consists of, how they are related to the 	          /       / electromechanical components of the vehicle, and what is the process to           /        / build/compile/upload the code to the vehicle’s controllers.			          /
 
 The code consists in 2 different programs for both M5Stack and ProMicro controller. One 
