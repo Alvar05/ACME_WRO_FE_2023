@@ -53,9 +53,9 @@ By the code part, we use the BluetoothSerial.h library to control the bluetooth 
  
 We thought of introducing a sensor that would allow us to read distances somehow more accurately than an ultrasonic sensor and over a wider range than a conventional infrared sensor.
  
-We chose the OPT3101 sensor from Pololu, with components from Texas Instruments. This is a Time Of Flight (TOF) sensor, which measures distances of up to 1 metre by calculating the time it takes for a previously emitted infrared light beam to bounce back to the sensor.
+We chose the OPT3101 sensor from Pololu, with components from Texas Instruments. This is a Time Of Flight (TOF) sensor, which measures distances of up to 1 meter by calculating the time it takes for a previously emitted infrared light beam to bounce back to the sensor.
  
-It has six emitters and two receivers that allow the data to be divided into three channels: left, centre and right, with a range of fifty, sixty and fifty degrees respectively.
+It has six emitters and two receivers that allow the data to be divided into three channels: left, center and right, with a range of fifty, sixty and fifty degrees respectively.
 The operation of this type of sensor avoids many problems as it does not depend on the intensity of the light received, as would be the case with a conventional infrared sensor.
 Sensor website:
 https://www.pololu.com/product/3680
@@ -69,26 +69,26 @@ Just like we did in the old vehicle, the distance it moves must be somehow recor
 Each wheel is connected to a cylindrical magnet which, when moving, is detected by the sensor, giving a signal every few degrees. This way we can get an idea of the distance travelled by the robot. The third sensor is supposed to read the rotation degrees of the motor, so we can estimate the actual speed of the motor.
 
 
-### Problems whith the OPT3031
-The Tof sensor that we tried to use ended up generating more problems that the ones it solved.
-The use of this sensor at the same time of the MPU6050 gyroscope caused trouble, it stopped working at some point whithout any apearent reason and the data recieved was quite irregular.
-We thought on implementing a different Tof sensor, being the VL53LX our main option but, by now, we will be using the HC-sr04 ultrasonic sensor, that seems to allways work precisely enough. 
-Despite of that, the ultrasonic has generated some problems until now, but those seem to be easier to deal whith. That is why we won't change it yet.
-The main ploblem seems to be caused by the vibration of the wheels when spining. This vibration spreds though the robot and to the sensor, making it send false data.
+### Problems with the OPT3031
+The TOF sensor that we tried to use ended up generating more problems than the ones it solved.
+The use of this sensor at the same time as the MPU6050 gyroscope caused trouble, it stopped working at some point without any apparent reason and the data received was quite irregular.
+We thought on implementing a different TOF sensor, being the VL53LX our main option but, by now, we will be using the HC-sr04 ultrasonic sensor, that seems to always work precisely enough. 
+Despite of that, the ultrasonic has generated some issue until now, but those seem to be easier to deal with. That is why we won't change it yet.
+The main problem seems to be caused by the vibration of the wheels when spinning. This vibration spreds though the robot and to the sensor, making it send false data.
 
 ### Implementing VL53L1X
 
-Finally, we tried the VL53L1X that seemed to work really good in short distances (not working really good with non-reflective black walls at high distances). The solution was to implement HC-sr04 and VL53L1X at the same time, using ultrasonics in long distances (with a slower refresh) and the TOF ones in shorter ranges.
+Finally, we tried the VL53L1X that seemed to work really good in short distances (not working so good with non-reflective black walls at high distances). The solution was to implement HC-sr04 and VL53L1X at the same time, using ultrasonics in long distances (with a slower refresh) and the TOF ones in shorter ranges.
 
 ### The HC-sr04 sensors' issues
-As result of using again the ultrasonic sensors some old problems showed up again. Due to the fact that the HC-sr04 has a much narrower range than the OPT3031 we have seen ourselves pushed into using three HC to cover the two sides of the robot aswell as the front. The problem abot that is that we don't have enough pins in the M5Stack to connect that much sensors.
+As a result of using again the ultrasonic sensors, some old issues showed up again. Due to the fact that the HC-sr04 has a much narrower range than the OPT3031, we have seen ourselves pushed into using three HC to cover the two sides of the robot as well as the front. The problem about that is that we don't have enough pins in the M5Stack to connect that many sensors.
 We are using again two boards, one controlled by the M5 and the other by an Arduino, this way we can get the pins we need.
 
 ### Camera module
-To achieve the goal of detecting the signs and their colour we used the HuskyLens camera module connected to the M5Stack using I2C. The HuskyLens camera has its own processor which outputs the detected object information (x and y position, height and width, colour…) to the M5Stack. Then the M5Stack can use the height value to do a simple rule of three, with a pre-calibrated value, and calculate the distance to the object; or it can use the x value to estimate the direction of the object. It also reads the colour value and depending on the sign colour makes the robot turn right (if it’s red) or left (if it’s green). The camera is mounted with a 3D-printed support to a servo so it can rotate and the servo is fixed to the PCB.
+To achieve the goal of detecting the signs and their colour we used the HuskyLens camera module connected to the M5Stack using I2C. The HuskyLens camera has its own processor which outputs the detected object information (x and y position, height and width, colour…) to the M5Stack. Then the M5Stack can use the height value to do a simple rule of three, with a pre-calibrated value, and calculate the distance to the object; or it can use the x value to estimate the direction of the object. It also reads the colour value and depending on the sign colour makes the robot turn right (if it’s red) or left (if it’s green). The camera is mounted with a 3D-printed support to a servo, so it can rotate, and the servo is fixed to the PCB.
 
 ### How it does during the matches
 
-We wanted a fast robot, but now is too fast in some zones of the mat and we're working on reducing its minimum velocity to have a better control in some especific tasks. Our idea is to make a first lap with low velocity to read all the aleatory components of the round and, in the next laps, make acceleration and deceleration sections knowing our path to be faster.
+We wanted a fast robot, but now is too fast in some zones of the mat, and we're working on reducing its minimum velocity to have a better control in some specific tasks. Our idea is to make a first lap with low velocity to read all the aleatory components of the round and, in the next laps, make acceleration and deceleration sections knowing our path to be faster.
 
 Happy cloning!
