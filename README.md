@@ -45,13 +45,13 @@ To carry out this project we have created a chassis from Lego Mindstorm Robot In
 To achieve the goal of detecting the signs and their colour we used the Pixy2 camera module connected to an Arduino Nano. The Pixy camera has its own processor which outputs the detected object information (x and y position, height and width, colour…) to the arduino. Then the arduino can use the height value to do a simple rule of three, with a pre-calibrated value, and calculate the distance to the object; or it can use the x value to estimate the direction of the object. It also reads the colour value and depending on the sign colour makes the robot turn right (if it’s red) or left (if it’s green). The camera case was designed by ourselves and 3D printed in PLA plastic and holds the camera with some pressure between the main case and the top. The case has seven holes compatible with the Lego Technic connectors to make mounting the camera with the Lego parts possible.
 
 
-## Updates (from the last year model to the new one)
+## This year vehicle
 
 This year we are improving the robot, our main goals are to make it smaller and faster, so we are building it all over again, over a different base. This time, instead of making our own PLA structure, we used a RC mini-Z toy and started building the new vehicle over its base structure.
 
 The code consists in 2 different programs for both M5Stack and ProMicro controller. The M5Stack is the main controller (Master) and connects by I2C with the ProMicro, which controls everything related to HC-04 sensors and sends it to the master. Every module of each program contains a simple description of what it does at the beggining of it, but, basically, they contain functions to use in the main program related to the electromechanical part specified or I2C communication.
 
-To compile and upload the programs to the controllers we use Arduino IDE. To upload the code to the ESP32 controller of the M5Stack you can find the steps in https://docs.m5stack.com/en/quick_start/m5core/arduino.
+To compile and upload the programs to the controllers we use Arduino IDE. To upload the code to the ESP32 controller of the M5Stack you can follow the steps in https://docs.m5stack.com/en/quick_start/m5core/arduino.
 
 
 
