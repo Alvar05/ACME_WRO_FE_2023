@@ -74,7 +74,7 @@ The TOF sensor that we tried to use ended up generating more problems than the o
 The use of this sensor at the same time as the MPU6050 gyroscope caused trouble, it stopped working at some point without any apparent reason and the data received was quite irregular.
 We thought on implementing a different TOF sensor, being the VL53LX our main option but, by now, we will be using the HC-sr04 ultrasonic sensor, that seems to always work precisely enough. 
 Despite of that, the ultrasonic has generated some issue until now, but those seem to be easier to deal with. That is why we won't change it yet.
-The main problem seems to be caused by the vibration of the wheels when spinning. This vibration spreds though the robot and to the sensor, making it send false data.
+The main problem seems to be caused by the vibration of the wheels when spinning. This vibration spreads though the robot and to the sensor, making it send false data.
 
 ### Implementing VL53L1X
 
