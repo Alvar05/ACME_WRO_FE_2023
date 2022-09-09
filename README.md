@@ -5,10 +5,10 @@ This repository contains engineering materials of a self-driven vehicle's model 
 
 ## Content
 
-* `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members). Also a panoramic version of the Funny photo and a link to its making-of video.
+* `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members). Also, a panoramic version of the Funny photo and a link to its making-of video.
 * `v-photos` contains 8 photos of the vehicle (6 from every side, top and bottom, 1 with last year's vehicle and 1 without the M5Stack and all the components visible).
 * `video` contains the video.md file with the link to a video with a driving demonstration.
-* `schemes` contains one schematic diagram of the electromechanical components illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
+* `schemes` contains one schematic diagram of the electromechanical components, illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
 * `src` contains code of control software for all components which were programmed to participate in the competition.
 * `models` contains all the 3D-printed parts of the vehicle. 
 * `other` contains the PCBs of the vehicle and the datasheets of all the components.
@@ -16,28 +16,28 @@ This repository contains engineering materials of a self-driven vehicle's model 
  
 ## Introduction
  
-Since our participation last year, we have made a new vehicle (smaller and faster) using what we learnt from the old vehicle, which had two arduino controlled boards communicated by I2C, so we could use a larger number of sensors.
+Since our participation last year, we have made a new vehicle (smaller and faster) using what we learnt from the old vehicle, which had two Arduino controlled boards communicated by I2C, so we could use a larger number of sensors.
 
 
 
 ## This year vehicle
 
-This year we are improving the robot, our main goals are to make it smaller and faster, so we are building it all over again, over a different base. This time, instead of making our own PLA structure, we used a RC mini-Z toy car and started building the new vehicle over its base structure.
+This year we are improving the robot, our main goals are to make it smaller and faster, so we are building it all over again, over a different base. This time, instead of making our own PLA structure, we used an RC mini-Z toy car and started building the new vehicle over its base structure.
 
-The code consists in 2 different programs for both M5Stack and ProMicro controller. The M5Stack is the main controller (Master) and connects by I2C with the ProMicro, which controls everything related to HC-04 sensors and sends it to the master. Every module of each program contains a simple description of what it does at the beggining of it, but, basically, they contain functions to use in the main program related to the electromechanical part specified or I2C communication.
+The code consists of 2 different programs for both M5Stack and ProMicro controller. The M5Stack is the main controller (Master) and connects by I2C with the ProMicro, which controls everything related to HC-04 sensors and sends it to the master. Every module of each program contains a simple description of what it does at the beggining of it, but, basically, they contain functions to use in the main program related to the electromechanical part specified or I2C communication.
 
-To compile and upload the programs to the controllers we use Arduino IDE. To upload the code to the ESP32 controller of the M5Stack you can follow the steps in https://docs.m5stack.com/en/quick_start/m5core/arduino.
+To compile and upload the programs to the controllers, we use Arduino IDE. To upload the code to the ESP32 controller of the M5Stack, you can follow the steps in https://docs.m5stack.com/en/quick_start/m5core/Arduino.
 
 
 
 ### Problems with the processor
 
-At first, we tried to implement the same board distribution on the new robot; two boards, with one arduino nano each; but, soon we realised that, due to the change of structure and the new sensors used (ex; OPT 3101), the two board distribution became inappropriate.
-The arduino memory wasn’t large enough and fitting two boards into such a small structure was almost impossible. Our solution was to implement the M5Stack processor.
+At first, we tried to implement the same board distribution on the new robot; two boards, with one Arduino nano each; but, soon we realised that, due to the change of structure and the new sensors used (ex; OPT 3101), the two board distribution became inappropriate.
+The Arduino memory wasn’t large enough, and fitting two boards into such a small structure was almost impossible. Our solution was to implement the M5Stack processor.
 
 ### New tires
 
-We tried to create our own rubber tires for the new vehicle using PLA-made molds. The first few tires turned out to be not good enough so we bought and started using Pololu tires. We will be making more tires hoping that we can substitute the Pololu ones the moment we get ours to be good enough.
+We tried to create our own rubber tires for the new vehicle using PLA-made molds. The first few tires turned out to be not good enough, so we bought and started using Pololu tires. We will be making more tires, hoping that we can substitute the Pololu ones the moment we get ours to be good enough.
 
 ### Receiving data from the robot to ease debugging
  
@@ -47,7 +47,7 @@ The elements we have in the APP are some variables to change like speedness or c
  
 The method used to emulate the robot moves is odometry based on the two encoders that are placed at both of the rear tires, which can rotate freely and don’t steer (this allows us to use a differential-based odometry method). Later on, we found out that our encoders weren't precise enough to have a good actualization of the position, causing lots of error between the estimation and the real position. 
  
-By the code part, we use the BluetoothSerial.h library to control the bluetooth data of the M5Stack. To update the data from the robot, the APP sends a petition to the robot which, when recieved, returns a string between a first “<” character and a final “>” character to make it easier for the APP to detect the correct data and avoid other noise. The data received outside of the “<string>”, is accumulated and when a \n is received, all the accumulated data is printed in the screen console (this allows us to send some flag words to the APP console using the println() method and have more control on what is happening in the running program).
+By the code part, we use the BluetoothSerial.h library to control the bluetooth data of the M5Stack. To update the data from the robot, the APP sends a petition to the robot which, when received, returns a string between a first “<” character and a final “>” character to make it easier for the APP to detect the correct data and avoid other noise. The data received outside the “<string>”, is accumulated and when a \n is received, all the accumulated data is printed in the screen console (this allows us to send some flag words to the APP console using the println() method and have more control on what is happening in the running program).
  
 ### Choosing sensors
  
