@@ -16,7 +16,7 @@ This repository contains engineering materials of a self-driven vehicle's model 
  
 ## Introduction
  
-Since our participation last year, we have made a new vehicle (smaller and faster) using what we learnt from the old vehicle, which had two arduino controlled boards communicated by I2C, so we could use a larger number of sensors. And 
+Since our participation last year, we have made a new vehicle (smaller and faster) using what we learnt from the old vehicle, which had two arduino controlled boards communicated by I2C, so we could use a larger number of sensors.
 
 
 
