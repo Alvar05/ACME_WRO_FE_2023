@@ -90,4 +90,6 @@ Our original plan involed detecting the colour lines on the game field, so we ca
 ### Camera module
 To achieve the goal of detecting the signs and their colour we used the HuskyLens camera module connected to the M5Stack using I2C. The HuskyLens camera has its own processor which outputs the detected object information (x and y position, height and width, colour…) to the M5Stack. Then the M5Stack can use the height value to do a simple rule of three, with a pre-calibrated value, and calculate the distance to the object; or it can use the x value to estimate the direction of the object. It also reads the colour value and depending on the sign colour makes the robot turn right (if it’s red) or left (if it’s green). The camera is mounted with a 3D-printed support to a servo so it can rotate and the servo is fixed to the PCB.
 
+
+ 
 Happy cloning!
