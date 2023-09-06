@@ -3,4 +3,4 @@ Control software
 
 This directory contains code for control software which is used by the vehicle to participate in the competition and which was developed by ACME.
 
-Also, all the libraries needed to upload the code are in the "dependencies" folder.
+All the libraries needed to upload the code are in the "dependencies" folder.
