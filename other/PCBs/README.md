@@ -1,4 +1,6 @@
-This directory contains all the PCBs used in the car:
+This directory contains all the gerber files for the PCBs used in the car:
 
-* `Encoders.svg`
-* `Main_Board.svg`
+* `Front LEDs PCB`
+* `Rear LEDs PCB`
+* `Main PCB`
+* `Encoders PCB`
