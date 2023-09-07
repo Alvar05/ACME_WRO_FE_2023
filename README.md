@@ -6,9 +6,9 @@ This repository contains engineering materials of a self-driven vehicle's model 
 ## Content
 
 * `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members). Also, a panoramic version of the Funny photo and a link to its making-of video.
-* `v-photos` contains 8 photos of the vehicle (6 from every side, top and bottom, 1 with last year's vehicle and 1 without the M5Stack and all the components visible).
+* `vehicle-photos` contains 6 photos of the vehicle (from every side, top and bottom).
 * `video` contains the video.md file with the link to a video with a driving demonstration.
-* `schemes` contains one schematic diagram of the electromechanical components, illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
+* `schematics` contains schematic diagrams of the electromechanical components, illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
 * `src` contains code of control software for all components which were programmed to participate in the competition.
 * `models` contains all the 3D-printed parts of the vehicle. 
 * `other` contains the PCBs of the vehicle and the datasheets of all the components.
