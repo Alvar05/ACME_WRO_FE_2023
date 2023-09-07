@@ -59,6 +59,10 @@ We use a HuskyLens AI camera with the capability to recognize faces and objects,
 When the robot detects that it passed a corner, it turns the mirror to view what is in the next sector and the camera reads the color and position of the signals. We simplified the number of possible positions of the signals to 11, ignoring if they are in the left or right lane (only taking into account if they are in the rear, middle or front), because our vehicle is small enough that it can pass between any position of the signals.
 The I2C 32U4, the one with the camera, then sends the number we assigned of the specific position in which the signals are to the Master, which saves this position for the other two laps (this way we can go faster because we do not need to read the positions again) and turns the car to position itself on the correct side.
 
+## Debugging with graphs and telemetry
+
+For debugging purposes we included a HC-05 bluetooth module in the vehicle, only used during testing and debuggin, during the competition it will be disconnected. For ease of analyzing the information sent by the robot we use a graphing application made with Python by our friend Maria Pilligua uploaded to her GitHub repository (*link aqui*). With this we can see values like the speed or the distance counted from the encoders and view it in the style of Formula 1 telemetry which is more practical for comparing it to earlier tests.
+
 ## Code building, compiling and uploading process
 
 We programmed all using the Arduino IDE like any Arduino board, but because we use the 32U4 microcontrollers directly we have to flash the bootloader to each 32U4. We flashed the Arduino Leonardo bootloader because it uses this microcontroller and we are very familiar with it. The process for flashing it requires you to connect the 32U4 to another Arduino using the ICSP communication, then the normal Arduino acts as an ISP programmer (using the example code ArduinoISP) and flashes your 32U4 with the selected bootloader.
