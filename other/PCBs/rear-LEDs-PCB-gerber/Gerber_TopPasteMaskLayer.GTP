@@ -1,0 +1,31 @@
+G04 Layer: TopPasteMaskLayer*
+G04 EasyEDA v6.5.34, 2023-09-07 17:04:59*
+G04 f697fdafff0640ba919c3c9aeae9fa65,0b3e81c085af431c91bff7fd5324728f,10*
+G04 Gerber Generator version 0.2*
+G04 Scale: 100 percent, Rotated: No, Reflected: No *
+G04 Dimensions in millimeters *
+G04 leading zeros omitted , absolute positions ,4 integer and 5 decimal *
+%FSLAX45Y45*%
+%MOMM*%
+
+%ADD10R,1.1999X1.3000*%
+
+%LPD*%
+D10*
+G01*
+X2573985Y4599000D03*
+G01*
+X2243988Y4599000D03*
+G01*
+X2573985Y4128998D03*
+G01*
+X2243988Y4128998D03*
+G01*
+X2053285Y4599000D03*
+G01*
+X1723288Y4599000D03*
+G01*
+X2053285Y4128998D03*
+G01*
+X1723288Y4128998D03*
+M02*
