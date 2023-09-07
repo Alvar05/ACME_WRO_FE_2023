@@ -61,7 +61,7 @@ The I2C 32U4, the one with the camera, then sends the number we assigned of the 
 
 ## Debugging with graphs and telemetry
 
-For debugging purposes we included a HC-05 bluetooth module in the vehicle, only used during testing and debuggin, during the competition it will be disconnected. For ease of analyzing the information sent by the robot we use a graphing application made with Python by our friend Maria Pilligua uploaded to her GitHub repository (*link aqui*). With this we can see values like the speed or the distance counted from the encoders and view it in the style of Formula 1 telemetry which is more practical for comparing it to earlier tests.
+For debugging purposes we included a HC-05 bluetooth module in the vehicle, only used during testing and debuggin, during the competition it will be disconnected. For ease of analyzing the information sent by the robot we use a graphing application made with Python by our friend Maria Pilligua uploaded to her [GitHub repository](https://github.com/mpilligua/app_wro). With this we can see values like the speed or the distance counted from the encoders and view it in the style of Formula 1 telemetry which is more practical for comparing it to earlier tests.
 
 ## Code building, compiling and uploading process
 
