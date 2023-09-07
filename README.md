@@ -15,6 +15,12 @@ This repository provides information about the building and programming process 
 * `other` contains the PCBs of the vehicle and the datasheets of all the components.
 * `YouTube Channel` All public videos are uploaded at https://www.youtube.com/channel/UCMpIuC9MiNL4U_FDTKrd1CQ
 
+## Structure
+
+This year we are reusing the structure from last year, a RC toy car (the WLtoys k989). We removed the rear differential case to make it front drive, and we put two optical encoders connected to the rear wheels in the new free space.
+But the most important change is that we removed the aluminium base and replaced it with our new PCB. This PCB is made by us: we insolated a photo-sensible PCB, put green solder mask on it and soldered all the connections and vias. The components are almost all soldered in SMD (surface mounted) by hand, we even had to use a digital microscope.
+
+
 ## This year vehicle
 
 This year we are improving the robot, our main goals are to make it smaller and faster, so we are building it all over again, over a different base. This time, instead of making our own PLA structure, we used an RC mini-Z toy car and started building the new vehicle over its base structure.
