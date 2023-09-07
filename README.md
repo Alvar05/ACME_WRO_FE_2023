@@ -6,7 +6,7 @@ This repository provides information about the building and programming process 
 
 ## Content
 
-* `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members). Also, a panoramic version of the Funny photo and a link to its making-of video.
+* `team-photos` contains 2 photos of the team (an official one and one funny photo).
 * `vehicle-photos` contains 6 photos of the vehicle (from every side, top and bottom).
 * `video` contains the video.md file with the link to a video with a driving demonstration.
 * `schematics` contains schematic diagrams of the electromechanical components, illustrating all the elements (electronic components and motors) used in the vehicle and how they connect to each other.
