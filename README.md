@@ -1,7 +1,8 @@
 Engineering materials
 ====
+## Introduction
 
-This repository contains engineering materials of a self-driven vehicle's model participating in the WRO Future Engineers competition in the season 2022 of the team ACME.
+This repository provides information about the building and programming process of our self-driving car for the Future Engineers 2023 competition. Since this is our third year participating in this competition we have updated our robot even more to be more controllable, compact and precise, remaking it almost entirely.
 
 ## Content
 
@@ -13,12 +14,6 @@ This repository contains engineering materials of a self-driven vehicle's model 
 * `models` contains all the 3D-printed parts of the vehicle. 
 * `other` contains the PCBs of the vehicle and the datasheets of all the components.
 * `YouTube Channel` All public videos are uploaded at https://www.youtube.com/channel/UCMpIuC9MiNL4U_FDTKrd1CQ
- 
-## Introduction
- 
-Since our participation last year, we have made a new vehicle (smaller and faster) using what we learnt from the old vehicle, which had two Arduino controlled boards communicated by I2C, so we could use a larger number of sensors.
-
-
 
 ## This year vehicle
 
