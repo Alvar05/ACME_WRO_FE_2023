@@ -4,6 +4,7 @@ Engineering materials
 
 This repository provides information about the building and programming process of our self-driving car for the Future Engineers 2023 competition. Since this is our third year participating in this competition we have updated our robot even more to be more controllable, compact and precise, remaking it almost entirely.
 
+![Alt text](/vehicle-photos/vehicle-with-camera-2023.jpeg?raw=true "Asembled Vehicle")
 ## Content
 
 * `team-photos` contains 2 photos of the team (an official one and one funny photo).
@@ -20,7 +21,6 @@ This repository provides information about the building and programming process 
 This year we are reusing the structure from last year, a RC toy car (the WLtoys k989). We removed the rear differential case to make it front drive, and we put two optical encoders connected to the rear wheels in the new free space.
 But the most important change is that we removed the aluminium base and replaced it with our new PCB. This PCB is made by us: we insolated a photo-sensible PCB, put green solder mask on it and soldered all the connections and vias. The components are almost all soldered in SMD (surface mounted) by hand, we even had to use a digital microscope.
 
-![Alt text](/vehicle-photos/vehicle-with-camera-2023.jpeg?raw=true "Asembled Vehicle")
 ## Electronics
 
 The robot consists of three ATMEGA32U4 microcontrollers, so it can be seen as three modules. One microcontroller as the Master, another as the I2C Slave and the last as the Sensors Slave. We chose to use three microcontrollers because we feared that they would be saturated and we could not upload the main code, and in the end we were right, the programs for each use around the 70 - 80% of the maximum program memory.
@@ -39,6 +39,7 @@ This microcontroller also sends its sensor data via SPI communication to the mas
 
 This microcontroller is in charge of the main program which uses all the information received from the slaves to control the entire robot (mainly the direction servo and the motor) to complete the challenge.
 
+![Alt text](/vehicle-photos/bottom-side-2023.jpeg?raw=true "PCB Bottom")
 ## Programming modules
 
 Having in mind that there are three programs (for each microcontroller), we can also group parts of all the code in groups regarding its purpose.
