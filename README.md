@@ -30,7 +30,6 @@ This microcontroller reads the data from three HC-SR04 ultrasonic sensors (in th
 The microcontroller connects to the master via SPI communication to send the data from the sensors and receive commands to drive the motor.
 
 ![Alt text](https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen-1200x675.jpg)
-![Alt text](http://full/path/to/img.jpg "Optional title")
 
 ### I2C slave
  
