@@ -5,8 +5,6 @@ Engineering materials
 This repository provides information about the building and programming process of our self-driving car for the Future Engineers 2023 competition. Since this is our third year participating in this competition we have updated our robot even more to be more controllable, compact and precise, remaking it almost entirely.
 
 ![Alt text](/vehicle-photos/vehicle-with-camera-2023.jpeg?raw=true "Asembled Vehicle")
-
-![](https://drive.google.com/file/d/1-ySvUDfZltkHaDp0-b9uS9qJR5Ha9DSN/view)
 ## Content
 
 * `team-photos` contains 2 photos of the team (an official one and one funny photo).
