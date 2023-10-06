@@ -29,7 +29,7 @@ The robot consists of three ATMEGA32U4 microcontrollers, so it can be seen as th
 This microcontroller reads the data from three HC-SR04 ultrasonic sensors (in the front, right side and left side) and of three encoders (two on the rear wheels and one directly connected to the motor). It also controls the motor via one IFX9201SG H-bridge motor controller.
 The microcontroller connects to the master via SPI communication to send the data from the sensors and receive commands to drive the motor.
 
-![Prueba](https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen-1200x675.jpg)
+![](https://www.adslzone.net/app/uploads-adslzone.net/2019/04/borrar-fondo-imagen-1200x675.jpg)
 ### I2C slave
  
 This microcontroller connects to all the sensors who use I2C communication: one MPU6050 gyroscope sensor, two VL53L1X TOF sensors (left and right) and the HuskyLens camera. It also controls 10 WS2810B LEDs that act as the vehicle’s headlights, turn signals and brake lights, and a servo that rotates a small mirror that allows the camera to see from left to right.
