@@ -19,7 +19,7 @@ This repository provides information about the building and programming process 
 
 This year we are reusing the structure from last year, a RC toy car (the WLtoys k989). We removed the rear differential case to make it front drive, and we put two optical encoders connected to the rear wheels in the new free space.
 But the most important change is that we removed the aluminium base and replaced it with our new PCB. This PCB is made by us: we insolated a photo-sensible PCB, put green solder mask on it and soldered all the connections and vias. The components are almost all soldered in SMD (surface mounted) by hand, we even had to use a digital microscope.
-
+![Alt text](/vehicle-photos/vehicle-with-camera-2023.jpeg?raw=true "Asembled Vehicle")
 ## Electronics
 
 The robot consists of three ATMEGA32U4 microcontrollers, so it can be seen as three modules. One microcontroller as the Master, another as the I2C Slave and the last as the Sensors Slave. We chose to use three microcontrollers because we feared that they would be saturated and we could not upload the main code, and in the end we were right, the programs for each use around the 70 - 80% of the maximum program memory.
