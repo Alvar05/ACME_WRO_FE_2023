@@ -174,7 +174,7 @@ byte readSector(int nIterLectura) {
   else if (ID[0] != -1 and ID[1] == -1) {               // 1 block
     if (distBloqueC < command.distBloqueCerca * 10) return 0 + ID[0];         // close Block
     else if (distBloqueC > command.distBloqueLejos * 10) return 4 + ID[0];    // far Block
-    else return 2 + ID[0];                              // Bloque Centro
+    else return 2 + ID[0];                              // Center block
   }
   else {                                                // 2 blocks
     if (ID[0] != ID[1] and ID[0] == 2) return 10;       // Red - Green
